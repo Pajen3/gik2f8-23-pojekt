@@ -1,2 +1,2 @@
-# gik2f8-23-pojekt
+# gik2f8-23-projekt
 Projektarbete Payraw Pontus Joakim
