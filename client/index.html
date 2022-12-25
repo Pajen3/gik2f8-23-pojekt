@@ -15,21 +15,34 @@
                 <h2 class="mb-6 text-3xl text-orange-900">Lägg till en bild</h2>
                 <form id="todoForm" name="todoForm" >
                     <section class="mb-2">
-                        <label class="block pr-5 mb-2 text-xl" for="username">Välj album/ Skapa en ny</label>
+                        <label class="block pr-5 mb-2 text-xl" for="username">Välj den album bilden ska sparas till</label>
                         <p class="message text-sm text-red-700 mb-2 hidden"> Error message</p>
-                        <input type="text" name="username" id="username" class="w-full rounded-md border-yellow-500 border-2 focus-within:outline-none focus:border-yellow-600 px-4 py-2">
+                        <select type="text" name="username" id="username" class="w-96 rounded-md border-yellow-500 border-2 focus-within:outline-none focus:border-yellow-600 px-4 py-2"> 
+                            <option value="">Blank</option>
+                            <option value="">Album 1</option>
+                            <option value="">Album 2</option>
+                            <option value="">Album 3</option>
+
+                        </select>
+                        <button name="submitAlbum" class="rounded-md bg-yellow-600 hover:bg-yellow-400 px-8 py-2" type="submitt">Välj</button>
+                        <label class="ml-2 pr-5 mb-2 text-xl" for="newAlbum">...eller skapa ny album</label>
+                        <input type="text" name="newAlbum" id="newAlbum" class="w-50 rounded-md border-yellow-500 border-2 focus-within:outline-none focus:border-yellow-600 px-4 py-2" placeholder="Skriv namet på albumet..">
+
+
+                        <button name="createAlbum" class="rounded-md bg-yellow-600 hover:bg-yellow-400 px-8 py-2" type="submitt">Skapa album</button>
+
 
                     </section>
                     <section class="mb-2">
                         <label class="block pr-5 mb-2 text-xl" for="title">Titel på bilden</label>
                         <p class="message text-sm text-red-700 mb-2 hidden"> Error message</p>
-                        <input type="text" name="title" id="title" class="w-full rounded-md border-yellow-500 border-2 focus-within:outline-none focus:border-yellow-600 px-4 py-2">
+                        <input type="text" name="title" id="title" class="w-96	 rounded-md border-yellow-500 border-2 focus-within:outline-none focus:border-yellow-600 px-4 py-2">
                     </section>
                   
                     <section class="mb-2">
                         <label class="block pr-5 mb-2 text-xl" for="title">infoga bild</label>
                         <p class="message text-sm text-red-700 mb-2 hidden"> Error message</p>
-                        <input type="file" name="filename" id="myFile" class="w-full rounded-md border-yellow-500 border-2 focus-within:outline-none focus:border-yellow-600 px-4 py-2">
+                        <input type="file" name="filename" id="myFile" class="w-96 rounded-md border-yellow-500 border-2 focus-within:outline-none focus:border-yellow-600 px-4 py-2">
                     </section>
                     <button name="submitTodoForm" class="rounded-md bg-yellow-500 hover:bg-yellow-400 px-4 py-1" type="submitt">Spara</button>
                 </form>
@@ -39,6 +52,41 @@
         <section class="flex gap-10 w-full xl:w-4/5 mx-2 xl:mx-auto bg-slate-300 bg-opacity-75 p-5 rounded-lg mt-6 " >
             <section>
                 <h2 class="mb-6 text-3xl text-orange-900">Titta bland album</h2>
+                <ul>
+                    <li>
+                        <button class="bg-yellow-600 hover:bg-orange-700 rounded-md text-white font-bold py-2 px-4 mt-2 my-3  border-black border-2" onclick="myFunction()" id="myBtn">Visa album 1</button>
+                        <button class="rounded-md bg-red-700 hover:bg-red-400 px-4 py-1" onclick="myFunction()" id="myBtn">ta bort album</button>
+
+                    </li>
+                    <li>
+                        <button class="bg-yellow-600 hover:bg-orange-700 rounded-md text-white font-bold py-2 px-4 mt-2 my-3  border-black border-2 onclick="myFunction()" id="myBtn">Visa album 2</button>
+                        <button class="rounded-md bg-red-700 hover:bg-red-400 px-4 py-1" onclick="myFunction()" id="myBtn">ta bort album</button>
+                        
+
+                    </li>
+                    <li>
+                        <button class="bg-yellow-600 hover:bg-orange-700 rounded-md text-white font-bold py-2 px-4 mt-2 my-3  border-black border-2 onclick="myFunction()" id="myBtn">Visa album 3</button>
+                        <button class="rounded-md bg-red-700 hover:bg-red-400 px-4 py-1" onclick="myFunction()" id="myBtn">ta bort album</button>
+
+
+                    </li>
+                    <li>
+                        <button class="bg-yellow-600 hover:bg-orange-700 rounded-md text-white font-bold py-2 px-4 mt-2 my-3  border-black border-2 onclick="myFunction()" id="myBtn">Visa album 4</button>
+                        <button class="rounded-md bg-red-700 hover:bg-red-400 px-4 py-1" onclick="myFunction()" id="myBtn">ta bort album</button>
+
+                    </li>
+                    <li>
+                        <button class="bg-yellow-600 hover:bg-orange-700 rounded-md text-white font-bold py-2 px-4 mt-2 my-3  border-black border-2 onclick="myFunction()" id="myBtn">Visa album 5</button>
+                        <button class="rounded-md bg-red-700 hover:bg-red-400 px-4 py-1" onclick="myFunction()" id="myBtn">ta bort album</button>
+
+                    </li>
+                    <li>
+                        <button class="bg-yellow-600 hover:bg-orange-700 rounded-md text-white font-bold py-2 px-4 mt-2 my-3  border-black border-2  onclick="myFunction()" id="myBtn">Visa album 6</button>
+                        <button class="rounded-md bg-red-700 hover:bg-red-400 px-4 py-1" onclick="myFunction()" id="myBtn">ta bort album</button>
+
+                        
+                    </li>
+                </ul>
             </section>
         </section>
         
