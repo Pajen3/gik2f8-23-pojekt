@@ -8,6 +8,41 @@
     <title>Document</title>
 </head>
 <body>
+    <main id="root" class="pt-24 bg-gradient-to-br from-blue-500 to-yellow-400 min-h-screen">
+        <h1 class="text-center mb-10 text-7xl text-red-900">Album appen</h1>
+        <section class="flex gap-10 w-full xl:w-4/5 mx-2 xl:mx-auto bg-white bg-opacity-75 p-5 rounded-lg">
+            <section class="w-full">
+                <h2 class="mb-6 text-3xl text-orange-900">Lägg till en bild</h2>
+                <form id="todoForm" name="todoForm" >
+                    <section class="mb-2">
+                        <label class="block pr-5 mb-2 text-xl" for="username">Välj album/ Skapa en ny</label>
+                        <p class="message text-sm text-red-700 mb-2 hidden"> Error message</p>
+                        <input type="text" name="username" id="username" class="w-full rounded-md border-yellow-500 border-2 focus-within:outline-none focus:border-yellow-600 px-4 py-2">
+
+                    </section>
+                    <section class="mb-2">
+                        <label class="block pr-5 mb-2 text-xl" for="title">Titel på bilden</label>
+                        <p class="message text-sm text-red-700 mb-2 hidden"> Error message</p>
+                        <input type="text" name="title" id="title" class="w-full rounded-md border-yellow-500 border-2 focus-within:outline-none focus:border-yellow-600 px-4 py-2">
+                    </section>
+                  
+                    <section class="mb-2">
+                        <label class="block pr-5 mb-2 text-xl" for="title">infoga bild</label>
+                        <p class="message text-sm text-red-700 mb-2 hidden"> Error message</p>
+                        <input type="file" name="filename" id="myFile" class="w-full rounded-md border-yellow-500 border-2 focus-within:outline-none focus:border-yellow-600 px-4 py-2">
+                    </section>
+                    <button name="submitTodoForm" class="rounded-md bg-yellow-500 hover:bg-yellow-400 px-4 py-1" type="submitt">Spara</button>
+                </form>
+            </section>
+
+        </section>
+        <section class="flex gap-10 w-full xl:w-4/5 mx-2 xl:mx-auto bg-slate-300 bg-opacity-75 p-5 rounded-lg mt-6 " >
+            <section>
+                <h2 class="mb-6 text-3xl text-orange-900">Titta bland album</h2>
+            </section>
+        </section>
+        
+    </main>
     
     <script src="Api.js"></script>
     <script src="script.js"></script>
