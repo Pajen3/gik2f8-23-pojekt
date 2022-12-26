@@ -12,39 +12,48 @@
         <h1 class="text-center mb-10 text-7xl text-red-900">Album appen</h1>
         <section class="flex gap-10 w-full xl:w-4/5 mx-2 xl:mx-auto bg-white bg-opacity-75 p-5 rounded-lg">
             <section class="w-full">
-                <h2 class="mb-6 text-3xl text-orange-900">Lägg till en bild</h2>
-                <form id="todoForm" name="todoForm" >
+                <h2 class="mb-6 text-3xl text-orange-900">Lägg till en ny medarbetare :)</h2>
+                <form id="personForm" name="todoForm" >
                     <section class="mb-2">
-                        <label class="block pr-5 mb-2 text-xl" for="username">Välj den album bilden ska sparas till</label>
+                        <label class="block pr-5 mb-2 text-xl" for="username">Välj avdelning</label>
                         <p class="message text-sm text-red-700 mb-2 hidden"> Error message</p>
-                        <select type="text" name="username" id="username" class="w-96 rounded-md border-yellow-500 border-2 focus-within:outline-none focus:border-yellow-600 px-4 py-2"> 
-                            <option value="">Blank</option>
-                            <option value="">Album 1</option>
-                            <option value="">Album 2</option>
-                            <option value="">Album 3</option>
-
+                        <select type="text" name="avdelning" id="avdelning" class="w-96 rounded-md border-yellow-500 border-2 focus-within:outline-none focus:border-yellow-600 px-4 py-2"> 
+                            <option value="blank">Blank</option>
+                            <option value="kundservice">Kundservice</option>
+                            <option value="ekonomi">Ekonomi</option>
+                            <option value="it">IT</option>
+                            <option value="försäljning">Försäljning</option>
                         </select>
-                        <button name="submitAlbum" class="rounded-md bg-yellow-600 hover:bg-yellow-400 px-8 py-2" type="submitt">Välj</button>
-                        <label class="ml-2 pr-5 mb-2 text-xl" for="newAlbum">...eller skapa ny album</label>
-                        <input type="text" name="newAlbum" id="newAlbum" class="w-50 rounded-md border-yellow-500 border-2 focus-within:outline-none focus:border-yellow-600 px-4 py-2" placeholder="Skriv namet på albumet..">
-
-
-                        <button name="createAlbum" class="rounded-md bg-yellow-600 hover:bg-yellow-400 px-8 py-2" type="submitt">Skapa album</button>
+                        
 
 
                     </section>
                     <section class="mb-2">
-                        <label class="block pr-5 mb-2 text-xl" for="title">Titel på bilden</label>
+                        <label class="block pr-5 mb-2 text-xl" for="namn_input">Namn</label>
                         <p class="message text-sm text-red-700 mb-2 hidden"> Error message</p>
-                        <input type="text" name="title" id="title" class="w-96	 rounded-md border-yellow-500 border-2 focus-within:outline-none focus:border-yellow-600 px-4 py-2">
+                        <input type="text" name="namn_input" id="namn_input" class="w-96	 rounded-md border-yellow-500 border-2 focus-within:outline-none focus:border-yellow-600 px-4 py-2">
                     </section>
-                  
+
                     <section class="mb-2">
-                        <label class="block pr-5 mb-2 text-xl" for="title">infoga bild</label>
+                        <label class="block pr-5 mb-2 text-xl" for="pn_inpt">Personummer</label>
                         <p class="message text-sm text-red-700 mb-2 hidden"> Error message</p>
-                        <input type="file" name="filename" id="myFile" class="w-96 rounded-md border-yellow-500 border-2 focus-within:outline-none focus:border-yellow-600 px-4 py-2">
+                        <input type="text" name="pn_input" id="pn_input" class="w-96	 rounded-md border-yellow-500 border-2 focus-within:outline-none focus:border-yellow-600 px-4 py-2">
                     </section>
-                    <button name="submitTodoForm" class="rounded-md bg-yellow-500 hover:bg-yellow-400 px-4 py-1" type="submitt">Spara</button>
+
+                    <section class="mb-2">
+                        <label class="block pr-5 mb-2 text-xl" for="tel_input">Telefonummer</label>
+                        <p class="message text-sm text-red-700 mb-2 hidden"> Error message</p>
+                        <input type="text" name="tel_input" id="tel_input" class="w-96	 rounded-md border-yellow-500 border-2 focus-within:outline-none focus:border-yellow-600 px-4 py-2">
+                    </section>
+
+                    <section class="mb-2">
+                        <label class="block pr-5 mb-2 text-xl" for="sal_input">Lön</label>
+                        <p class="message text-sm text-red-700 mb-2 hidden"> Error message</p>
+                        <input type="text" name="sal_input" id="sal_input" class="w-96	 rounded-md border-yellow-500 border-2 focus-within:outline-none focus:border-yellow-600 px-4 py-2">
+                    </section>
+
+                    
+                    <button name="submitTodoForm" class="rounded-md bg-yellow-500 hover:bg-yellow-400 px-4 py-1" type="submit">Spara</button>
                 </form>
             </section>
 

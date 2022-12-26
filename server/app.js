@@ -16,7 +16,7 @@ app
     next();
 });
 
-app.get("/tasks", async (req, res) => {
+app.get("/personal", async (req, res) => {
     try {
         const tasks = await fs.readFile("./tasks.json");
         res.send(JSON.parse(tasks));
@@ -29,15 +29,20 @@ app.get("/tasks", async (req, res) => {
 });
 
 
-app.post("/tasks", async(req, res) => {
+app.post("/personal", async(req, res) => {
    try {
-    
+    //let max_employee_Id = 1;
+    console.log(req.body)
+    //const employee_file = await fs.readFile('./personal.json');
+    //const current_empoyee = JSON.parse(employee_file);
+    //console.log(current_empoyee)
+    //await fs.writeFile('./personal.json', JSON.stringify(newList));
    } catch (error) {
     
    }
 });
 
-app.delete("/tasks/:id", async(req, res) => {
+app.delete("/personal/:id", async(req, res) => {
     
     try {
         
