@@ -49,13 +49,7 @@ app.delete("/tasks/:id", async(req, res) => {
 
 
 
-app.put('/tasks/:id', async (req, res) => {
-  try {
-    
-  } catch (error) {
-    
-  }
-  });
+
 
 
 
