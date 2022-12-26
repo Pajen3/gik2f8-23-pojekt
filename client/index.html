@@ -9,16 +9,16 @@
 </head>
 <body>
     <main id="root" class="pt-24 bg-gradient-to-br from-blue-500 to-yellow-400 min-h-screen">
-        <h1 class="text-center mb-10 text-7xl text-red-900">Album appen</h1>
+        <h1 class="text-center mb-10 text-7xl text-red-900">HR appen</h1>
         <section class="flex gap-10 w-full xl:w-4/5 mx-2 xl:mx-auto bg-white bg-opacity-75 p-5 rounded-lg">
             <section class="w-full">
                 <h2 class="mb-6 text-3xl text-orange-900">Lägg till en ny medarbetare :)</h2>
-                <form id="personForm" name="todoForm" >
+                <form id="personForm" name="personForm" >
                     <section class="mb-2">
-                        <label class="block pr-5 mb-2 text-xl" for="username">Välj avdelning</label>
+                        <label class="block pr-5 mb-2 text-xl" for="department_inpt">Välj avdelning</label>
                         <p class="message text-sm text-red-700 mb-2 hidden"> Error message</p>
-                        <select type="text" name="avdelning" id="avdelning" class="w-96 rounded-md border-yellow-500 border-2 focus-within:outline-none focus:border-yellow-600 px-4 py-2"> 
-                            <option value="blank">Blank</option>
+                        <select type="text" name="department_inpt" id="department_inpt" class="w-96 rounded-md border-yellow-500 border-2 focus-within:outline-none focus:border-yellow-600 px-4 py-2"> 
+                            <option value="">Blank</option>
                             <option value="kundservice">Kundservice</option>
                             <option value="ekonomi">Ekonomi</option>
                             <option value="it">IT</option>
@@ -60,41 +60,27 @@
         </section>
         <section class="flex gap-10 w-full xl:w-4/5 mx-2 xl:mx-auto bg-slate-300 bg-opacity-75 p-5 rounded-lg mt-6 " >
             <section>
-                <h2 class="mb-6 text-3xl text-orange-900">Titta bland album</h2>
+                <h2 class="mb-6 text-3xl text-orange-900">Titta bland avdelningarna</h2>
                 <ul>
                     <li>
-                        <button class="bg-yellow-600 hover:bg-orange-700 rounded-md text-white font-bold py-2 px-4 mt-2 my-3  border-black border-2" onclick="myFunction()" id="myBtn">Visa album 1</button>
-                        <button class="rounded-md bg-red-700 hover:bg-red-400 px-4 py-1" onclick="myFunction()" id="myBtn">ta bort album</button>
+                        <button class="w-40 bg-yellow-600 hover:bg-orange-700 rounded-md text-white font-bold py-2 px-4 mt-2 my-3  border-black border-2" onclick="myFunction()" id="myBtn1">Kundservice </button>
 
                     </li>
                     <li>
-                        <button class="bg-yellow-600 hover:bg-orange-700 rounded-md text-white font-bold py-2 px-4 mt-2 my-3  border-black border-2 onclick="myFunction()" id="myBtn">Visa album 2</button>
-                        <button class="rounded-md bg-red-700 hover:bg-red-400 px-4 py-1" onclick="myFunction()" id="myBtn">ta bort album</button>
+                        <button class="w-40 bg-yellow-600 hover:bg-orange-700 rounded-md text-white font-bold py-2 px-4 mt-2 my-3  border-black border-2 " onclick="myFunction()" id="myBtn2">Ekonomi </button>
                         
 
                     </li>
                     <li>
-                        <button class="bg-yellow-600 hover:bg-orange-700 rounded-md text-white font-bold py-2 px-4 mt-2 my-3  border-black border-2 onclick="myFunction()" id="myBtn">Visa album 3</button>
-                        <button class="rounded-md bg-red-700 hover:bg-red-400 px-4 py-1" onclick="myFunction()" id="myBtn">ta bort album</button>
+                        <button class="w-40 bg-yellow-600 hover:bg-orange-700 rounded-md text-white font-bold py-2 px-4 mt-2 my-3  border-black border-2" onclick="myFunction()" id="myBtn3">It</button>
 
 
                     </li>
                     <li>
-                        <button class="bg-yellow-600 hover:bg-orange-700 rounded-md text-white font-bold py-2 px-4 mt-2 my-3  border-black border-2 onclick="myFunction()" id="myBtn">Visa album 4</button>
-                        <button class="rounded-md bg-red-700 hover:bg-red-400 px-4 py-1" onclick="myFunction()" id="myBtn">ta bort album</button>
+                        <button class="w-40 bg-yellow-600 hover:bg-orange-700 rounded-md text-white font-bold py-2 px-4 mt-2 my-3  border-black border-2" onclick="myFunction()" id="myBtn4">Försäljning</button>
 
                     </li>
-                    <li>
-                        <button class="bg-yellow-600 hover:bg-orange-700 rounded-md text-white font-bold py-2 px-4 mt-2 my-3  border-black border-2 onclick="myFunction()" id="myBtn">Visa album 5</button>
-                        <button class="rounded-md bg-red-700 hover:bg-red-400 px-4 py-1" onclick="myFunction()" id="myBtn">ta bort album</button>
-
-                    </li>
-                    <li>
-                        <button class="bg-yellow-600 hover:bg-orange-700 rounded-md text-white font-bold py-2 px-4 mt-2 my-3  border-black border-2  onclick="myFunction()" id="myBtn">Visa album 6</button>
-                        <button class="rounded-md bg-red-700 hover:bg-red-400 px-4 py-1" onclick="myFunction()" id="myBtn">ta bort album</button>
-
-                        
-                    </li>
+                
                 </ul>
             </section>
         </section>

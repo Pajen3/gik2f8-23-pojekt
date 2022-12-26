@@ -1,109 +1,132 @@
+personForm.department_inpt.addEventListener("input", (e) => validateField(e.target));
+personForm.department_inpt.addEventListener("blur", (e) => validateField(e.target));
+
+
+personForm.namn_input.addEventListener("input", (e) => validateField(e.target));
+personForm.namn_input.addEventListener("blur", (e) => validateField(e.target));
+
+personForm.pn_input.addEventListener("input", (e) => validateField(e.target));
+personForm.pn_input.addEventListener("blur", (e) => validateField(e.target));
+
+personForm.tel_input.addEventListener("input", (e) => validateField(e.target));
+personForm.tel_input.addEventListener("blur", (e) => validateField(e.target));
+
+personForm.sal_input.addEventListener("input", (e) => validateField(e.target));
+personForm.sal_input.addEventListener("blur", (e) => validateField(e.target));
+
+
+
+let departmentValid = true;
+let nameValid = true;
+let pnummerValid = true;
+let phoneValid = true;
+let salaryValid = true;
 
 const api = new Api('http://localhost:5000/personal');
 
-personForm = document.getElementById("personForm");
-avdelning = document.getElementById("avdelning")
-personForm.addEventListener('submit', submit_person);
 
-console.log(String(personForm.tel_input.value).length)
+function validateField(field) {
+    const { name, value } = field;
 
+    let = validationMessage = "";
 
-function validateField() {
-    let valid_counter = 0
-    try{
+    switch (name) {
+
+        case "department_inpt": {
+            if (value.length < 1) {
+                departmentValid = false;
+                validationMessage = "Vänligen välj avdelning";
+            }
+            
+             else {
+                departmentValid = true;
+            }
+            break;
+        }
     
-    if (personForm.avdelning.value == "Blank") {
-            validationMessage = "Vänligen välj avdelning";
+        case "namn_input": {
+            if (value.length > 30) {
+                nameValid = false;
+                validationMessage = "Fältet  'Namn' får inte innehålla mer än 30 tecken";
+            }
+            else if (value == 0) {
+                nameValid = false;
+                validationMessage = "Fältet  'Namn' får inte lämnas tomt";
+            } else {
+                nameValid = true;
+            }
+            break;
+        }
+        case "pn_input": {
+            if (value.length != 10) {
+                pnummerValid = false;
+                validationMessage = "personnummer måste innehålla 10 tecken";
+            } else {
+                pnummerValid = true;
+            }
+            break;
+
+        }
+        case "tel_input": {
+            if (value.length != 10) {
+                phoneValid = false;
+                validationMessage = "Mobilnummer måste vara 10  tecken";
+            } else {
+                phoneValid = true;
+            }
+            break;
+
+        }
+        case "sal_input": {
+            if (value < 10000) {
+                salaryValid = false;
+                validationMessage = "Vänligen sätt en lön över 10.000, detta är inte slavarbete. Personen har elräkningar att betala. Vi är i Sverige, inte i Qatar.";
+            } else {
+                salaryValid = true;
+            }
+            break;
+
         }
 
-    else{
-            valid_counter+= 1
-        }
-    }
-    catch(e){
-        console.log(e)
     }
 
-    try{
-    if (personForm.name.value.length > 30) {
-            validationMessage = "Fältet  'Namn' får inte innehålla mer än 30 tecken";
-        }
-    else if (personForm.name.value == 0) {
-            validationMessage = "Fältet  'Namn' får inte lämnas tomt";
-        } 
-    else {
-            valid_counter+=1
-        }
-    }
-    catch(e){
-        console.log(e)
-    }
-        
-    try{
+    field.previousElementSibling.innerText = validationMessage;
+    field.previousElementSibling.classList.remove("hidden");
 
-    if (personForm.pn_input.value.length != 10) {
-            validationMessage = "personnummer måste innehålla 10 tecken";
-        } 
-    else {
-            valid_counter+=1
-        }
-    }
-    catch(e){
-        console.log(e)
-    }
-       
-    try{
+}
 
-    if (personForm.tel_input.value.length != 10) {
-            validationMessage = "Mobilnummer måste vara 10  tecken";
-        } 
-    else {
-            valid_counter+=1
-        }
-    }
-    catch(e){
-        console.log(e)
+
+function onSubmit(e){
+    e.preventDefault();
+
+    if(departmentValid && nameValid && pnummerValid && phoneValid && salaryValid){
+        console.log("submit");
+        submit_person();
     }
 
-    try{
+}
 
-   
-    if (personForm.sal_input.value < 10000) {
-            validationMessage = "Vänligen sätt en lön över 10.000, detta är inte slavarbete. Personen har elräkningar att betala. Vi är i Sverige, inte i Qatar.";
-        } 
-    else {
-            valid_counter+=1
-        }
-    }
-    catch(e){
-        console.log(e)
-    }
-         
-    return valid_counter
-    }
+function submit_person() {
 
-console.log(validateField())
-
-function submit_person(){
-    
-    try{
+    try {
         const person = {
-            avdelning: avdelning.value,
+            avdelning: personForm.department_inpt.value,
             name: personForm.namn_input.value,
             personummer: personForm.pn_input.value,
             telefonummer: personForm.tel_input.value,
             salary: personForm.sal_input.value
-          };    
+        };
 
-          api.create(person).then((person) => {
-          }); 
+        api.create(person).then((person) => {
+            
+        });
     }
 
-    catch(err){
-       alert(err)
+    catch (err) {
+        alert(err)
     }
 
-  
 
-    
+
+
 }
