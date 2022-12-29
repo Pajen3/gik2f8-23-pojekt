@@ -126,7 +126,95 @@ function submit_person() {
         alert(err)
     }
 
-
-
-
 }
+
+
+function deletePerson( id, avdelning){
+ api.delete(id)
+ getEmployeeApi(avdelning);
+}
+
+
+function showEmployees({ id, avdelning, name, personummer, telefonummer, salary  }){
+  let html = 
+  `<ul style="padding: 15px; border-radius: 1rem; background-color: black; font-size: 25px; color:#62FF00; margin-top:15px; display: flex; flex-direction: row; align-items: center">
+  <li style="padding-right: 10px; flex: 1"><b>Namn</b><br> ${name}</li>
+  <li style="padding-right: 10px; flex: 1"><b>Avdelning</b><br> ${avdelning}</li>
+  <li style="padding-right: 10px; flex: 1"><b>Personummer</b><br> ${personummer}</li>
+  <li style="padding-right: 10px; flex: 1"><b>Telefonummer</b><br> ${telefonummer}</li>
+  <li style="padding-right: 10px; flex: 1"><b>Lön</b><br> ${salary}</li>
+  <li style="flex: 1">
+     <button 
+     type="button"
+     style="background-color: #62FF00;
+     border: none;
+     color: black;
+     padding: 15px 32px;
+     text-align: center;
+     text-decoration: none;
+     display: inline-block;
+     font-size: 20px"
+     onclick="deletePerson('${id}','${avdelning}')">Ta bort!</button>
+  </li>
+</ul>
+`
+ return html
+}
+
+function getEmployeeApi(department){
+    api.getEmployee().then((data) => {
+     
+        var sortedEmploye = [];
+        data.forEach((employee) => {
+            
+            switch(department) {
+                case "it":
+                  if (employee.avdelning == "it"){
+                    sortedEmploye.push(employee)
+                  }
+                  break;
+                case "kundservice":
+                    if (employee.avdelning == "kundservice"){
+                        sortedEmploye.push(employee)
+                      }
+                  break;
+                case "ekonomi":
+                    if (employee.avdelning == "ekonomi"){
+                        sortedEmploye.push(employee)
+                      }
+                    break;
+                case "försäljning":
+                    if (employee.avdelning == "försäljning"){
+                        sortedEmploye.push(employee)
+                      }
+                    break;
+                default:
+              }
+
+        });
+        const infobox = document.getElementById("infoBox")
+        infobox.innerHTML = "";
+        sortedEmploye.forEach((employee) => {
+            infobox.insertAdjacentHTML("beforeend", showEmployees(employee))
+       });
+        
+});
+}
+
+function showKundservice(){
+    getEmployeeApi("kundservice");
+  }
+  
+  function showEkonomi(){
+    getEmployeeApi("ekonomi");
+  }
+  
+  function showIt(){
+    getEmployeeApi("it");
+  }
+  
+  function showSalesDepartment(){
+    getEmployeeApi("försäljning");
+  }
+
+
