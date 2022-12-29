@@ -18,12 +18,11 @@ app
 
 app.get("/personal", async (req, res) => {
     try {
-        const tasks = await fs.readFile("./tasks.json");
-        res.send(JSON.parse(tasks));
+        const employee_json_file = await fs.readFile("./employee.json");
+        res.send(JSON.parse(employee_json_file));
     
-    }catch(error){
+    } catch(error){
         res.status(500).send({error});
-
     }
    
 });
@@ -31,23 +30,44 @@ app.get("/personal", async (req, res) => {
 
 app.post("/personal", async(req, res) => {
    try {
-    //let max_employee_Id = 1;
-    console.log(req.body)
-    //const employee_file = await fs.readFile('./personal.json');
-    //const current_empoyee = JSON.parse(employee_file);
-    //console.log(current_empoyee)
-    //await fs.writeFile('./personal.json', JSON.stringify(newList));
-   } catch (error) {
+    let max_entry_id = 1;
+    const employee = req.body
+
+    const employee_json_file = await fs.readFile('./employee.json');
+    const current_emp = JSON.parse(employee_json_file);
     
+    if (current_emp.length > 0) {
+        max_entry_id = current_emp.reduce(
+          (max_entry_id, current_emp) => (current_emp.id > max_entry_id ? current_emp.id : max_entry_id),
+          max_entry_id
+        );
+        var new_entry = { id: max_entry_id + 1, ...employee };
+      }
+    else{
+        var new_entry = { id: max_entry_id, ...employee };
+    }
+    
+    const newList = current_emp ? [...current_emp, new_entry] : [new_entry];
+     
+    await fs.writeFile('./employee.json', JSON.stringify(newList));
+    
+   } catch (error) {
+    console.log(error)
    }
 });
 
 app.delete("/personal/:id", async(req, res) => {
     
     try {
+        const id = req.params.id;
+
+        const listBuffer = await fs.readFile('./employee.json');
+        const employees = JSON.parse(listBuffer);
+
+        await fs.writeFile('./employee.json', JSON.stringify(employees.filter((person) => person.id != id)));
         
     } catch (error) {
-        
+        console.log(error)
     }
    
 });
