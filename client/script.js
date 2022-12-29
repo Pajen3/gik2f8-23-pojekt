@@ -1,7 +1,6 @@
 personForm.department_inpt.addEventListener("input", (e) => validateField(e.target));
 personForm.department_inpt.addEventListener("blur", (e) => validateField(e.target));
 
-
 personForm.namn_input.addEventListener("input", (e) => validateField(e.target));
 personForm.namn_input.addEventListener("blur", (e) => validateField(e.target));
 
@@ -15,6 +14,7 @@ personForm.sal_input.addEventListener("input", (e) => validateField(e.target));
 personForm.sal_input.addEventListener("blur", (e) => validateField(e.target));
 
 
+personForm.addEventListener("submit", submit_person)
 
 let departmentValid = true;
 let nameValid = true;
@@ -126,7 +126,78 @@ function submit_person() {
         alert(err)
     }
 
-
-
-
 }
+
+
+
+function showEmployees({ id, avdelning, name, personummer, telefonummer, salary  }){
+  let html = 
+  `<ul>
+  <li>Avdelning: ${avdelning}</li>
+  <li>Namn: ${name}</li>
+  <li>Personummer: ${personummer}</li>
+  <li>Telefonummer: ${telefonummer}</li>
+  <li>Lön: ${salary}</li>
+</ul>
+`
+ return html
+}
+
+function getEmployeeApi(department){
+    api.getEmployee().then((data) => {
+     
+        var sortedEmploye = [];
+        data.forEach((employee) => {
+            
+            switch(department) {
+                case "IT":
+                  if (employee.avdelning == "it"){
+                    sortedEmploye.push(employee)
+                  }
+                  break;
+                case "Kundservice":
+                    if (employee.avdelning == "kundservice"){
+                        sortedEmploye.push(employee)
+                      }
+                  break;
+                case "Ekonomi":
+                    if (employee.avdelning == "ekonomi"){
+                        sortedEmploye.push(employee)
+                      }
+                    break;
+                case "Försäljning":
+                    if (employee.avdelning == "försäljning"){
+                        sortedEmploye.push(employee)
+                      }
+                    break;
+                default:
+                  // code block
+              }
+
+        });
+        console.log(sortedEmploye)
+        const infobox = document.getElementById("infoBox")
+        sortedEmploye.forEach((employee) => {
+            infobox.insertAdjacentHTML("beforeend", showEmployees(employee))
+       });
+        
+});
+}
+
+function showKundservice(){
+    getEmployeeApi("Kundservice");
+  }
+  
+  function showEkonomi(){
+    getEmployeeApi("Ekonomi");
+  }
+  
+  function showIt(){
+    getEmployeeApi("IT");
+  }
+  
+  function showSalesDepartment(){
+    getEmployeeApi("Försäljning");
+  }
+
+

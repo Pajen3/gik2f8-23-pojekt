@@ -1,0 +1,42 @@
+[
+  {
+    "id": 1,
+    "avdelning": "ekonomi",
+    "name": "payraw",
+    "personummer": "9955443323",
+    "telefonummer": "9291238812",
+    "salary": "200000000"
+  },
+  {
+    "id": 2,
+    "avdelning": "ekonomi",
+    "name": "fasdasda",
+    "personummer": "9955443323",
+    "telefonummer": "8321831234",
+    "salary": "5044333"
+  },
+  {
+    "id": 3,
+    "avdelning": "it",
+    "name": "dsdadas",
+    "personummer": "3213213213",
+    "telefonummer": "0725291385",
+    "salary": "10000000"
+  },
+  {
+    "id": 4,
+    "avdelning": "kundservice",
+    "name": "joakim",
+    "personummer": "9906108888",
+    "telefonummer": "9291238812",
+    "salary": "200000000"
+  },
+  {
+    "id": 5,
+    "avdelning": "ekonomi",
+    "name": "joakim",
+    "personummer": "9906108888",
+    "telefonummer": "9291238812",
+    "salary": "200000000"
+  }
+]
