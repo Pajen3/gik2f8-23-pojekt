@@ -1,46 +1,74 @@
-<<<<<<< HEAD
-[{"id":10,"avdelning":"försäljning","name":"hdsahasd","personummer":"9903183698","telefonummer":"0725291385","salary":"20000000"},{"id":12,"avdelning":"ekonomi","name":"jocke","personummer":"9903183698","telefonummer":"0725291385","salary":"20000000"},{"id":14,"avdelning":"","name":"fredde","personummer":"9903183698","telefonummer":"0725291385","salary":"20000000"},{"id":16,"avdelning":"it","name":"pontus","personummer":"9903183698","telefonummer":"0725291385","salary":"200000"},{"id":17,"avdelning":"it","name":"hdsahasd","personummer":"9999999999","telefonummer":"0725291385","salary":"20000000"},{"id":18,"avdelning":"ekonomi","name":"fredrik","personummer":"9903183698","telefonummer":"0725291385","salary":"20000000"},{"id":19,"avdelning":"försäljning","name":"pontus","personummer":"9903183698","telefonummer":"0725291385","salary":"200000"},{"id":20,"avdelning":"kundservice","name":"pontus","personummer":"9606067070","telefonummer":"0791212456","salary":"10001"},{"id":21,"avdelning":"kundservice","name":"Roberto","personummer":"9606067070","telefonummer":"0791212456","salary":"10001"}]
-=======
 [
   {
-    "id": 1,
-    "avdelning": "ekonomi",
-    "name": "payraw",
-    "personummer": "9955443323",
-    "telefonummer": "9291238812",
-    "salary": "200000000"
-  },
-  {
-    "id": 2,
-    "avdelning": "ekonomi",
-    "name": "fasdasda",
-    "personummer": "9955443323",
-    "telefonummer": "8321831234",
-    "salary": "5044333"
-  },
-  {
-    "id": 3,
-    "avdelning": "it",
-    "name": "dsdadas",
-    "personummer": "3213213213",
+    "id": 10,
+    "avdelning": "försäljning",
+    "name": "hdsahasd",
+    "personummer": "9903183698",
     "telefonummer": "0725291385",
-    "salary": "10000000"
+    "salary": "20000000"
   },
   {
-    "id": 4,
-    "avdelning": "kundservice",
-    "name": "joakim",
-    "personummer": "9906108888",
-    "telefonummer": "9291238812",
-    "salary": "200000000"
-  },
-  {
-    "id": 5,
+    "id": 12,
     "avdelning": "ekonomi",
-    "name": "joakim",
-    "personummer": "9906108888",
-    "telefonummer": "9291238812",
-    "salary": "200000000"
+    "name": "jocke",
+    "personummer": "9903183698",
+    "telefonummer": "0725291385",
+    "salary": "20000000"
+  },
+  {
+    "id": 14,
+    "avdelning": "",
+    "name": "fredde",
+    "personummer": "9903183698",
+    "telefonummer": "0725291385",
+    "salary": "20000000"
+  },
+  {
+    "id": 16,
+    "avdelning": "it",
+    "name": "pontus",
+    "personummer": "9903183698",
+    "telefonummer": "0725291385",
+    "salary": "200000"
+  },
+  {
+    "id": 17,
+    "avdelning": "it",
+    "name": "hdsahasd",
+    "personummer": "9999999999",
+    "telefonummer": "0725291385",
+    "salary": "20000000"
+  },
+  {
+    "id": 18,
+    "avdelning": "ekonomi",
+    "name": "fredrik",
+    "personummer": "9903183698",
+    "telefonummer": "0725291385",
+    "salary": "20000000"
+  },
+  {
+    "id": 19,
+    "avdelning": "försäljning",
+    "name": "pontus",
+    "personummer": "9903183698",
+    "telefonummer": "0725291385",
+    "salary": "200000"
+  },
+  {
+    "id": 20,
+    "avdelning": "kundservice",
+    "name": "pontus",
+    "personummer": "9606067070",
+    "telefonummer": "0791212456",
+    "salary": "10001"
+  },
+  {
+    "id": 21,
+    "avdelning": "kundservice",
+    "name": "Roberto",
+    "personummer": "9606067070",
+    "telefonummer": "0791212456",
+    "salary": "10001"
   }
 ]
->>>>>>> f9b1cd3b799443957dc86140de1c37d1f1391488
