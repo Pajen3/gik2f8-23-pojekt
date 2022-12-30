@@ -137,24 +137,17 @@ function deletePerson( id, avdelning){
 
 function showEmployees({ id, avdelning, name, personummer, telefonummer, salary  }){
   let html = 
-  `<ul style="padding: 15px; border-radius: 1rem; background-color: black; font-size: 25px; color:#62FF00; margin-top:15px; display: flex; flex-direction: row; align-items: center">
-  <li style="padding-right: 10px; flex: 1"><b>Namn</b><br> ${name}</li>
-  <li style="padding-right: 10px; flex: 1"><b>Avdelning</b><br> ${avdelning}</li>
-  <li style="padding-right: 10px; flex: 1"><b>Personummer</b><br> ${personummer}</li>
-  <li style="padding-right: 10px; flex: 1"><b>Telefonummer</b><br> ${telefonummer}</li>
-  <li style="padding-right: 10px; flex: 1"><b>Lön</b><br> ${salary}</li>
-  <li style="flex: 1">
+  `<ul class="flex my-5 border-b-2 border-black ">
+  <li class="mx-2 "><b>Namn</b><br> ${name}</li>
+  <li class="mx-2 "><b>Avdelning</b><br> ${avdelning}</li>
+  <li class="mx-2 "><b>Personummer</b><br> ${personummer}</li>
+  <li class="mx-2 "><b>Telefonummer</b><br> ${telefonummer}</li>
+  <li class="mx-2 "><b>Lön</b><br> ${salary}</li>
+  <li ">
      <button 
+     class="rounded-md bg-yellow-700 hover:bg-yellow-400  w-20 h-8 m-5"
      type="button"
-     style="background-color: #62FF00;
-     border: none;
-     color: black;
-     padding: 15px 32px;
-     text-align: center;
-     text-decoration: none;
-     display: inline-block;
-     font-size: 20px"
-     onclick="deletePerson('${id}','${avdelning}')">Ta bort!</button>
+     onclick="deletePerson('${id}','${avdelning}')">Ta bort</button>
   </li>
 </ul>
 `
@@ -216,5 +209,3 @@ function showKundservice(){
   function showSalesDepartment(){
     getEmployeeApi("försäljning");
   }
-
-
