@@ -80,7 +80,7 @@ function validateField(field) {
         case "sal_input": {
             if (value < 10000) {
                 salaryValid = false;
-                validationMessage = "Vänligen sätt en lön över 10.000, detta är inte slavarbete. Personen har elräkningar att betala. Vi är i Sverige, inte i Qatar.";
+                validationMessage = "Vänligen sätt en lön över 10.000";
             } else {
                 salaryValid = true;
             }
