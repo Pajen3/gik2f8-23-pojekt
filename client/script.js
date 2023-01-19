@@ -14,7 +14,7 @@ personForm.sal_input.addEventListener("input", (e) => validateField(e.target));
 personForm.sal_input.addEventListener("blur", (e) => validateField(e.target));
 
 
-personForm.addEventListener("submit", submit_person)
+personForm.addEventListener("submit", onSubmit)
 
 let departmentValid = true;
 let nameValid = true;
@@ -98,6 +98,7 @@ function validateField(field) {
 
 function onSubmit(e){
     e.preventDefault();
+    console.log("Hej")
 
     if(departmentValid && nameValid && pnummerValid && phoneValid && salaryValid){
         console.log("submit");
